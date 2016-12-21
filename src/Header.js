@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import * as colors from './open-color';
-import hero from './hero.jpg';
+import hero from './band.jpg';
 import * as breakpoints from './breakpoints'
 
 const Container = styled.header`
@@ -10,6 +10,7 @@ const Container = styled.header`
   width: 100%;
   background: url(${hero}) ${colors.gray9};
   background-size: cover;
+  background-position: 50%;
   display: flex;
   align-items: stretch;
 `
@@ -34,7 +35,10 @@ const Band = styled.h1`
 `
 
 const Divider = styled.hr`
-  width: 30%;
+  width: 20rem;
+  ${breakpoints.forPhoneOnly(`
+    width: 15rem;
+  `)}
 `
 
 const NextConcert = styled.div`
